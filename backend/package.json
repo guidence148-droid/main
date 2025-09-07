@@ -1,0 +1,27 @@
+{
+  "name": "guidence-ai-backend",
+  "version": "1.0.0",
+  "description": "Backend API for guidence.AI (Express + Node.js)",
+  "main": "server.js",
+  "type": "module",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "nodemon server.js"
+  },
+  "keywords": [
+    "ai",
+    "backend",
+    "express",
+    "guidence-ai"
+  ],
+  "author": "Anand",
+  "license": "MIT",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.3.1",
+    "express": "^4.19.2"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1"
+  }
+}
