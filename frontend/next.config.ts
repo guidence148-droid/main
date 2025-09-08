@@ -1,10 +1,12 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  reactStrictMode: true,
-  // Turbopack is experimental; use Webpack for stable builds
-  experimental: {
-    turbopack: false,
+  reactStrictMode: true, // Recommended
+  // Optional: remove Turbopack experimental feature
+  experimental: {},
+  typescript: {
+    // Ignore TypeScript build errors in production (use carefully)
+    ignoreBuildErrors: false, 
   },
 };
 
