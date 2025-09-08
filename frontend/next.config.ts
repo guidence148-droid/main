@@ -1,10 +1,10 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  turbopack: {
-    root: __dirname, // ✅ force Turbopack to use frontend folder as root
-  },
   reactStrictMode: true,
+  experimental: {
+    turbopack: false, // 🚀 fallback to Webpack
+  },
 };
 
 export default nextConfig;
