@@ -1,12 +1,10 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  reactStrictMode: true, // Recommended
-  // Optional: remove Turbopack experimental feature
-  experimental: {},
+  reactStrictMode: true,
+  experimental: {}, // no Turbopack, suppress warnings
   typescript: {
-    // Ignore TypeScript build errors in production (use carefully)
-    ignoreBuildErrors: false, 
+    ignoreBuildErrors: false, // fail build if TS errors exist
   },
 };
 

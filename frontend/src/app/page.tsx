@@ -1,9 +1,18 @@
 "use client";
+
 import { useEffect, useState } from "react";
+
+// Define the type for Guidence data
+interface Guidence {
+  id?: number;
+  name?: string;
+  error?: string;
+  [key: string]: any; // fallback for unknown fields
+}
 
 export default function Home() {
   const [helloMsg, setHelloMsg] = useState<string>("Loading...");
-  const [guidenceData, setGuidenceData] = useState<any[]>([]);
+  const [guidenceData, setGuidenceData] = useState<Guidence[]>([]);
 
   // Fetch backend /hello on load
   useEffect(() => {
@@ -17,9 +26,10 @@ export default function Home() {
   const fetchGuidence = async () => {
     try {
       const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/guidence`);
-      const data = await res.json();
+      const data: Guidence[] = await res.json();
       setGuidenceData(data);
-    } catch (err) {
+    } catch (error) {
+      console.error(error); // log the error for debugging
       setGuidenceData([{ error: "❌ Failed to fetch from DB" }]);
     }
   };
